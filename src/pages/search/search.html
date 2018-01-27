@@ -1,0 +1,18 @@
+<ion-header>
+        <ion-navbar>
+          <ion-title style = "text-align: left;">Find Insurance</ion-title>
+        </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+
+    <ion-item>
+        <ion-label>Type of Insurance</ion-label>
+        <ion-select [(ngModel)]="typeOfInsurance">
+            <ion-option value="Car Insurance">Car Insurance</ion-option>
+            <ion-option value="Health Insurance">Health Insurance</ion-option>
+            <ion-option value="Home Insurance">Home Insurance</ion-option>
+        </ion-select>
+    </ion-item>
+
+</ion-content>

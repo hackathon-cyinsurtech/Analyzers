@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            Registration
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input [(ngModel)]="registrationUser.name" type="text"></ion-input>
+        </ion-item>
+		
+		<ion-item>
+            <ion-label floating>Surname</ion-label>
+            <ion-input [(ngModel)]="registrationUser.family_name" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Gender (M/F/Other)</ion-label>
+            <ion-input [(ngModel)]="registrationUser.gender" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input [(ngModel)]="registrationUser.email" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input [(ngModel)]="registrationUser.password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Date of birth</ion-label>
+            <ion-input [(ngModel)]="registrationUser.birthdate" type="string"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Address</ion-label>
+            <ion-input [(ngModel)]="registrationUser.address" type="string"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>City</ion-label>
+            <ion-input [(ngModel)]="registrationUser.city" type="string"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Country</ion-label>
+            <ion-input [(ngModel)]="registrationUser.country" type="string"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Zip Code</ion-label>
+            <ion-input [(ngModel)]="registrationUser.zip" type="string"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Telephone Number 1</ion-label>
+            <ion-input [(ngModel)]="registrationUser.phone_number" type="string"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button block outline large (click)="onRegister()">Register</button>
+        </ion-item>
+
+    </ion-list>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50>
+                <button ion-button clear small (click)="navToResendCode()">Resend Code</button>
+            </ion-col>
+            <ion-col width-50>
+                <button ion-button clear small (click)="navToLogin()">Back</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
