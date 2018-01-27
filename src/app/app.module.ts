@@ -6,6 +6,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {AlertsPage} from "../pages/alerts/alerts";
 import {AccountPage} from "../pages/account/account";
+import {NavigationDetailsPage} from "../pages/account/account";
 import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
 import {SearchPage} from '../pages/search/search';
@@ -13,8 +14,7 @@ import {SearchPage} from '../pages/search/search';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { ItemService } from "../providers/item-service-mock"; 
-import { SearchService } from '../providers/search';
+import { ItemService } from "../providers/item-service-mock";
 
 import {CognitoUtil} from "../providers/cognito.service";
 import {AwsUtil} from "../providers/aws.service";
@@ -41,6 +41,7 @@ import {LogoutComponent} from "../pages/auth/logout.component";
     AlertsPage,
     TabsPage,
     AccountPage,
+    NavigationDetailsPage,
     LoginComponent,
     LogoutComponent,
     RegisterComponent,
@@ -63,6 +64,7 @@ import {LogoutComponent} from "../pages/auth/logout.component";
     SearchPage,
     AlertsPage,
     AccountPage,
+    NavigationDetailsPage,
     TabsPage,
     LoginComponent,
     LogoutComponent,
@@ -78,7 +80,6 @@ import {LogoutComponent} from "../pages/auth/logout.component";
     StatusBar,
     SplashScreen,
     ItemService,
-    SearchService,
     CognitoUtil,
     AwsUtil,
     UserLoginService,
