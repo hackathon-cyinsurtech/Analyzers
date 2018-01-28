@@ -24395,3 +24395,11 @@ ion-navbar.toolbar {
   width: auto;
   margin-right: 10px;
 }
+
+page-search ion-card-header {
+  background-color: #5083f1;
+}
+
+page-search ion-card {
+  border: 3px solid #a7caff;
+}

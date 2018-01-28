@@ -12,7 +12,9 @@ import { ActionSheetController } from 'ionic-angular';
 })
 export class SearchPage {
 
-  typeOfInsurance: String;
+  typeOfInsurance: string;
+  isMotor = false;
+  isHealth = false;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public config: Config,
@@ -22,6 +24,26 @@ export class SearchPage {
 
   }
 
+  enableMenu(type:string){
+    if (type == "0"){
+      this.isMotor = true;
+      this.isHealth = false;
+    }else if (type == "1"){
+      this.isMotor = false;
+      this.isHealth = true;
+    }
+    
+  }
+
+  doAlert(title: string, message: string) {
+
+    let alert = this.alertCtrl.create({
+        title: title,
+        subTitle: message,
+        buttons: ['OK']
+    });
+    alert.present();
+}
  
 
 }

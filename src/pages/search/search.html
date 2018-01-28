@@ -8,11 +8,429 @@
 
     <ion-item>
         <ion-label>Type of Insurance</ion-label>
-        <ion-select [(ngModel)]="typeOfInsurance">
-            <ion-option value="Car Insurance">Car Insurance</ion-option>
-            <ion-option value="Health Insurance">Health Insurance</ion-option>
-            <ion-option value="Home Insurance">Home Insurance</ion-option>
+        <ion-select [(ngModel)]="typeOfInsurance" (ionChange)="enableMenu(typeOfInsurance)">
+            <ion-option value="0">Car Insurance</ion-option>
+            <ion-option value="1">Health Insurance</ion-option>
         </ion-select>
     </ion-item>
+
+    <div *ngIf="isMotor">
+    <ion-card>
+        <ion-card-header>
+          Period of insurance
+        </ion-card-header>
+      
+        <ion-list>
+      
+          <ion-item>
+            <ion-label> Commencing Date</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY"  min="2018" max="2019"></ion-datetime>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label> Expiring Date (Midnight) </ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" min="2019" max="2020"></ion-datetime>
+          </ion-item>
+        </ion-list>
+    </ion-card>
+
+    <ion-card>
+            <ion-card-header>
+              Vehicle Details
+            </ion-card-header>
+          
+            <ion-list>
+          
+              <ion-item>
+                <ion-label> Reg. no</ion-label>
+                <ion-input type ="text"></ion-input>
+              </ion-item>
+          
+              <ion-item>
+                    <ion-label> Make</ion-label>
+                    <ion-input type ="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                    <ion-label> Model</ion-label>
+                    <ion-input type ="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                    <ion-label> Color</ion-label>
+                    <ion-input type ="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                    <ion-label> Type</ion-label>
+                    <ion-input type ="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                    <ion-label> Cubic Capacity (CC)</ion-label>
+                    <ion-input type ="number"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                    <ion-label>Year of manufacture</ion-label>
+                    <ion-datetime displayFormat="YYYY"  min="1950" max="2018"></ion-datetime>
+              </ion-item>
+              
+              <ion-item>
+                    <ion-label> Passengers</ion-label>
+                    <ion-input type ="number"></ion-input>
+              </ion-item>>
+
+              <ion-item>
+                    <ion-label>Estimated value</ion-label>
+                    <ion-input type ="number"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                    <ion-label>Approved carrying cap.</ion-label>
+                    <ion-input type ="number"></ion-input>
+              </ion-item>
+
+              
+            </ion-list>
+        </ion-card>
+
+        <ion-card text-wrap>
+                <ion-card-header>
+                  Other Details
+                </ion-card-header>
+              
+                <ion-list radio-group>
+                        <ion-list-header>
+                            Is the vehicle registered in your own name?
+                        </ion-list-header>
+                        <ion-item>
+                          <ion-label>Yes</ion-label>
+                          <ion-radio value="yes"></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label>No</ion-label>
+                          <ion-radio value="no"></ion-radio>
+                        </ion-item>
+                      
+                </ion-list>
+
+                <ion-list radio-group>
+                        <ion-list-header>
+                            Do you suffer from any health problems?
+                        </ion-list-header>
+                        <ion-item>
+                          <ion-label>Yes</ion-label>
+                          <ion-radio value="yes"></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label>No</ion-label>
+                          <ion-radio value="no"></ion-radio>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Details</ion-label>
+                                <ion-input type ="text"></ion-input>
+                          </ion-item>
+                      
+                </ion-list>
+
+                <ion-list radio-group>
+                        <ion-list-header>
+                            Do you have or ever had an insurance covering any motor vehicle?
+                        </ion-list-header>
+                        <ion-item>
+                          <ion-label>Yes</ion-label>
+                          <ion-radio value="yes"></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label>No</ion-label>
+                          <ion-radio value="no"></ion-radio>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Insurance company</ion-label>
+                                <ion-input type ="text"></ion-input>
+                          </ion-item>
+
+                          <ion-item>
+                                <ion-label> Policy number</ion-label>
+                                <ion-input type ="number"></ion-input>
+                          </ion-item>
+
+                          <ion-item>
+                                <ion-label> Reg. no</ion-label>
+                                <ion-input type ="number"></ion-input>
+                          </ion-item>
+
+                          <ion-item>
+                                <ion-label>Cover</ion-label>
+                                <ion-input type ="text"></ion-input>
+                          </ion-item>
+                      
+                </ion-list>
+
+                <ion-list radio-group>
+                        <ion-list-header>
+                            Have you been involved in any motor accident during the last 3 years?
+                        </ion-list-header>
+                        <ion-item>
+                          <ion-label>Yes</ion-label>
+                          <ion-radio value="yes"></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label>No</ion-label>
+                          <ion-radio value="no"></ion-radio>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Details</ion-label>
+                                <ion-input type ="text"></ion-input>
+                          </ion-item>
+                      
+                </ion-list>
+
+                <ion-list radio-group>
+                        <ion-list-header>
+                            Have you been convicted during the last 3 years for any criminal offense or traffic violation?
+                        </ion-list-header>
+                        <ion-item>
+                          <ion-label>Yes</ion-label>
+                          <ion-radio value="yes"></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label>No</ion-label>
+                          <ion-radio value="no"></ion-radio>
+                        </ion-item>
+
+                        <ion-item>
+                                <ion-label> Details</ion-label>
+                                <ion-input type ="text"></ion-input>
+                          </ion-item>
+                      
+                </ion-list>
+            </ion-card>
+
+            <ion-grid>
+                    <ion-row>
+                      <ion-col text-center>
+                            <button ion-button>Save data</button>
+                      </ion-col>
+                      <ion-col text-center>
+                            <button ion-button>Submit</button>
+                      </ion-col>
+                  </ion-row>
+            </ion-grid>
+        </div>
+
+
+
+        <div *ngIf="isHealth">
+                <ion-card>
+                    <ion-card-header>
+                      Period of insurance
+                    </ion-card-header>
+                  
+                    <ion-list>
+                  
+                      <ion-item>
+                        <ion-label> Commencing Date</ion-label>
+                        <ion-datetime displayFormat="DD/MM/YYYY"  min="2018" max="2019"></ion-datetime>
+                      </ion-item>
+                  
+                      <ion-item>
+                        <ion-label> Expiring Date (Midnight) </ion-label>
+                        <ion-datetime displayFormat="DD/MM/YYYY" min="2019" max="2020"></ion-datetime>
+                      </ion-item>
+                    </ion-list>
+                </ion-card>
+            
+                <ion-card text-wrap>
+                        <ion-card-header>
+                          Health Status and Family Medical Record
+                        </ion-card-header>
+                    
+                      
+                                <ion-list radio-group>
+                                        <ion-list-header>
+                                           Have you ever been diagnosed or treated with a therapy including medication, hospitalization or surgery.
+                                        </ion-list-header>
+                                        <ion-item>
+                                          <ion-label>Yes</ion-label>
+                                          <ion-radio value="yes"></ion-radio>
+                                        </ion-item>
+                                      
+                                        <ion-item>
+                                          <ion-label>No</ion-label>
+                                          <ion-radio value="no"></ion-radio>
+                                        </ion-item>
+                                      
+                                </ion-list>
+                      
+
+                                <ion-list>
+                                        <ion-list-header>
+                                                Have you ever been diagnosed or treated with a therapy including medication, hospitalization or surgery, or felt pain,anomaly or symptoms that are possibly related to:.
+                                             </ion-list-header>
+                                        <ion-item>
+                                          <ion-label>Heart problem</ion-label>
+                                          <ion-checkbox [(ngModel)]="heart"></ion-checkbox>
+                                        </ion-item>
+                                      
+                                        <ion-item>
+                                          <ion-label>Tumor or Cancer</ion-label>
+                                          <ion-checkbox [(ngModel)]="tumor"></ion-checkbox>
+                                        </ion-item>
+                                      
+                                        <ion-item>
+                                          <ion-label>Diabetes</ion-label>
+                                          <ion-checkbox [(ngModel)]="diabetes"></ion-checkbox>
+                                        </ion-item>
+
+                                        <ion-item>
+                                                <ion-label>Central Nervous system</ion-label>
+                                                <ion-checkbox [(ngModel)]="nervous"></ion-checkbox>
+                                              </ion-item>
+                                            
+                                              <ion-item>
+                                                <ion-label>Strokes</ion-label>
+                                                <ion-checkbox [(ngModel)]="stroke"></ion-checkbox>
+                                              </ion-item>
+                                            
+                                              <ion-item>
+                                                <ion-label>Drug Addictions</ion-label>
+                                                <ion-checkbox [(ngModel)]="drugs"></ion-checkbox>
+                                              </ion-item>
+
+                                      <ion-item>
+                                            <ion-label>Infectious disease</ion-label>
+                                            <ion-checkbox [(ngModel)]="infection"></ion-checkbox>
+                                          </ion-item>
+                                        
+                                          <ion-item>
+                                            <ion-label>Urogenital system</ion-label>
+                                            <ion-checkbox [(ngModel)]="urogenital"></ion-checkbox>
+                                          </ion-item>
+                                        
+                                          <ion-item>
+                                            <ion-label>Gastrointestinal system</ion-label>
+                                            <ion-checkbox [(ngModel)]="gastro"></ion-checkbox>
+                                          </ion-item>
+
+                                          <ion-item>
+                                                <ion-label>Respiratory diseases</ion-label>
+                                                <ion-checkbox [(ngModel)]="respiratory"></ion-checkbox>
+                                         </ion-item>
+                                            
+                                         <ion-item>
+                                                <ion-label>Endocrine disorders</ion-label>
+                                                <ion-checkbox [(ngModel)]="endocrine"></ion-checkbox>
+                                        </ion-item>
+                                        
+                          </ion-list>
+                          </ion-card>
+
+                          <ion-card text-wrap>
+                                <ion-card-header>
+                                  Family record
+                                </ion-card-header>
+                              
+        
+                                        <ion-list>
+                                                <ion-list-header>
+                                                       Does a family member have:
+                                                     </ion-list-header>
+                                                <ion-item>
+                                                  <ion-label>Heart problem</ion-label>
+                                                  <ion-checkbox [(ngModel)]="heart"></ion-checkbox>
+                                                </ion-item>
+                                              
+                                                <ion-item>
+                                                  <ion-label>Tumor or Cancer</ion-label>
+                                                  <ion-checkbox [(ngModel)]="tumor"></ion-checkbox>
+                                                </ion-item>
+                                              
+                                                <ion-item>
+                                                  <ion-label>Diabetes</ion-label>
+                                                  <ion-checkbox [(ngModel)]="diabetes"></ion-checkbox>
+                                                </ion-item>
+        
+                                                <ion-item>
+                                                        <ion-label>Central Nervous system diseases</ion-label>
+                                                        <ion-checkbox [(ngModel)]="nervous"></ion-checkbox>
+                                                      </ion-item>
+
+        
+                                                      
+                                                  <ion-item>
+                                                        <ion-label>Respiratory diseases</ion-label>
+                                                        <ion-checkbox [(ngModel)]="respiratory"></ion-checkbox>
+                                                 </ion-item>
+                                                    
+                                                 <ion-item>
+                                                        <ion-label>Endocrine disorders</ion-label>
+                                                        <ion-checkbox [(ngModel)]="endocrine"></ion-checkbox>
+                                                </ion-item>
+                                                
+                                  </ion-list>
+                                  </ion-card>
+
+                                <ion-card text-wrap>
+                                        <ion-card-header>
+                                          Way of Living
+                                        </ion-card-header>
+                                      
+                
+                                                <ion-list>
+                                                        <ion-list-header>
+                                                               Do you:
+                                                             </ion-list-header>
+                                                        <ion-item>
+                                                          <ion-label>Smoke</ion-label>
+                                                          <ion-checkbox [(ngModel)]="heart"></ion-checkbox>
+                                                        </ion-item>
+                                                      
+                                                        <ion-item>
+                                                          <ion-label>Drink alcohol</ion-label>
+                                                          <ion-checkbox [(ngModel)]="tumor"></ion-checkbox>
+                                                        </ion-item>
+                                                      
+                                                        <ion-item>
+                                                          <ion-label>Work for more than 40 horus per week</ion-label>
+                                                          <ion-checkbox [(ngModel)]="diabetes"></ion-checkbox>
+                                                        </ion-item>
+                
+                                                        <ion-item>
+                                                                <ion-label>Sleep for less than 8 hores per day</ion-label>
+                                                                <ion-checkbox [(ngModel)]="nervous"></ion-checkbox>
+                                                              </ion-item>
+        
+                
+                                                              
+                                                          <ion-item>
+                                                                <ion-label>Travel more than 6 times per year</ion-label>
+                                                                <ion-checkbox [(ngModel)]="respiratory"></ion-checkbox>
+                                                         </ion-item>
+                                                        
+                                          </ion-list>
+                                          </ion-card>
+        
+                                          <ion-grid>
+                                                <ion-row>
+                                                  <ion-col text-center>
+                                                        <button ion-button>Save data</button>
+                                                  </ion-col>
+                                                  <ion-col text-center>
+                                                        <button ion-button>Submit</button>
+                                                  </ion-col>
+                                              </ion-row>
+                                        </ion-grid>
+                    </div>
+
 
 </ion-content>
