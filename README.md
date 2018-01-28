@@ -17,7 +17,7 @@ Follow these instructions to install the app and run it with the mock (in-memory
 
 1. Navigate to the `Analyzers` directory :
     ```
-    cd workspace
+    cd Analyzers
     ```
 
 1. Install the dependencies
