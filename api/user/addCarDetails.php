@@ -5,13 +5,13 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 
 include_once "../config/connect_db.php";
-include_once "../objects/user_car_details.php";
+include_once "../objects/user.php";
 
 $database = new Database();
 $db = $database->connect();
 
 // initialize object
-$user_car_details = new UserCarDetails($db);
+$user = new User($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
@@ -33,7 +33,7 @@ $arr["accident"] = $data->accident;
 $arr["criminal"] = $data->criminal;
 $arr["user_id"] = $data->user_id;
 
-$stmt = $user_car_details->add($arr);
+$stmt = $user->addCarDetails($arr);
 
 if ($stmt!=NULL){
 	echo json_encode(array("message" => "0", "user_car_details" => $stmt));
