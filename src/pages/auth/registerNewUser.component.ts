@@ -45,6 +45,7 @@ export class RegisterNewUserComponent implements CognitoCallback {
         } else { //success
             console.log("in callback...result: " + result);
             this.nav.push(ConfirmRegistrationComponent, {
+                'name': this.registrationUser.email,
                 'email': this.registrationUser.email
             });
         }
