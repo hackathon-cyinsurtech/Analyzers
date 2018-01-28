@@ -16,7 +16,7 @@ import { CompanyService } from '../providers/company-service-mock';
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = TabsPage;
+    rootPage: any = LoginComponent;
 
     constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menu: MenuController,
                 public events: Events,
@@ -54,7 +54,6 @@ export class MyApp {
         }
           this.service.getAllCompanies().subscribe(data => {
               this.service.companies = data.json();
-              this.doAlert("Success",this.service.companies["companiesArr"][0]["name"])
               }, error => {
                   this.doAlert("Error!",JSON.stringify(error));
             });

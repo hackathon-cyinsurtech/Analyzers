@@ -6,6 +6,7 @@
 
 <ion-content no-bounce>
 
+    <div *ngIf="first">
     <ion-item>
         <ion-label>Type of Insurance</ion-label>
         <ion-select [(ngModel)]="typeOfInsurance" (ionChange)="enableMenu(typeOfInsurance)">
@@ -222,7 +223,7 @@
                             <button ion-button>Save data</button>
                       </ion-col>
                       <ion-col text-center>
-                            <button ion-button>Submit</button>
+                            <button ion-button (click)="showResults()">Submit</button>
                       </ion-col>
                   </ion-row>
             </ion-grid>
@@ -426,11 +427,57 @@
                                                         <button ion-button>Save data</button>
                                                   </ion-col>
                                                   <ion-col text-center>
-                                                        <button ion-button>Submit</button>
+                                                        <button ion-button (click)="showResults()">Submit</button>
                                                   </ion-col>
                                               </ion-row>
                                         </ion-grid>
                     </div>
+                </div>
+                <div *ngIf="second">
+                                <ion-slides>
+                                        <ion-slide *ngFor="let company of service.companies.companiesArr">
+                                            <ion-card>
+                                                <ion-card-header>
+                                                    {{company.name}}
+                                                </ion-card-header>
+                                                        <ion-img src={{company.logo}} height="100" width="200"></ion-img>
+                                                        <ion-item>
+                                                                <ion-label>Annual Price</ion-label>
+                                                                <ion-label>{{prices[company.id]}}</ion-label>
+                                                        </ion-item>  
+                                                        <ion-item>
+                                                                <ion-label>Legal expenses</ion-label>
+                                                                <ion-icon name={{cover[company.id][0]}} item-left></ion-icon>
+                                                        </ion-item>  
+                                                        <ion-item>
+                                                                <ion-label>Personal Accident</ion-label>
+                                                                <ion-icon name={{cover[company.id][1]}} item-left></ion-icon>
+                                                        </ion-item>  
+                                                        <ion-item>
+                                                                <ion-label>Breakdown cover</ion-label>
+                                                                <ion-icon name={{cover[company.id][2]}} item-left></ion-icon>
+                                                        </ion-item>  
+                                                        <ion-item>
+                                                                <ion-label>Windscreen cover</ion-label>
+                                                                        <ion-icon name={{cover[company.id][3]}} item-left></ion-icon>
+                                                        </ion-item>  
+                                                        <ion-item>
+                                                                <ion-label>Courtesy car</ion-label>
+                                                                <ion-icon name={{cover[company.id][4]}} item-left></ion-icon>
+                                                        </ion-item>  
 
+                                                        <ion-grid>
+                                                                <ion-row>
+                                                                  <ion-col text-center>
+                                                                        <button ion-button>Buy now!</button>
+                                                                  </ion-col>
+                                                              </ion-row>
+                                                        </ion-grid>
+                                                </ion-card>                                       
+                                            </ion-slide>
+                                </ion-slides>
+                                            
+
+                </div>
 
 </ion-content>
