@@ -23,5 +23,13 @@ class Company{
 		return NULL;
 	}
 
+
+function read(){
+		$query = "SELECT * FROM company";
+		$stmt = $this->conn->prepare($query);
+		$stmt->execute();
+		return $stmt;
+	}
 }
+
 ?>
