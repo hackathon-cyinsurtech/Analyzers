@@ -15,7 +15,7 @@ Follow these instructions to install the app and run it with the mock (in-memory
     git clone https://github.com/hackathon-cyinsurtech/Analyzers
     ```
 
-1. Navigate to the `workspace` directory :
+1. Navigate to the `Analyzers` directory :
     ```
     cd workspace
     ```
