@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import {Config, NavController,AlertController,NavParams} from 'ionic-angular';
-import {ItemService} from '../../providers/item-service-mock';
 import { Injectable } from '@angular/core';
 import { ActionSheetController } from 'ionic-angular';
 // import { InfoPage } from '../info/info';
@@ -16,7 +15,6 @@ export class SearchPage {
   typeOfInsurance: String;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public service: ItemService,
               public config: Config,
               public alertCtrl: AlertController,
               public actionSheetCtrl: ActionSheetController) {

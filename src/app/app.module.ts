@@ -14,7 +14,7 @@ import {SearchPage} from '../pages/search/search';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { ItemService } from "../providers/item-service-mock";
+import { CompanyService } from "../providers/company-service-mock";
 
 import {CognitoUtil} from "../providers/cognito.service";
 import {AwsUtil} from "../providers/aws.service";
@@ -79,7 +79,7 @@ import {LogoutComponent} from "../pages/auth/logout.component";
   providers: [
     StatusBar,
     SplashScreen,
-    ItemService,
+    CompanyService,
     CognitoUtil,
     AwsUtil,
     UserLoginService,
